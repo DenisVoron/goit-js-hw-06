@@ -17,5 +17,6 @@ function onFormSabm(event) {
             const message = "Перевірте заповнення всіх рядків!!";
             alert(message);
         }
+
     });
 };
