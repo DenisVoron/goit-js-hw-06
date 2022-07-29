@@ -1,17 +1,18 @@
-const inputEl = document.querySelector('#validation-input');
-console.log(inputEl);
-//console.log(inputEl[0].getAttribute('data-length'));
+const inputEl = document.querySelector('#validation-input[data-length="6"]');
+//console.log(inputEl);
+
 inputEl.addEventListener('blur', onCheckingNumberCharacters);
-//actions[0].dataset.action
-function onCheckingNumberCharacters(event) {
-    //console.log(inputEl[0].dataset);
+function onCheckingNumberCharacters() {
     const length = this.value.length;
-    console.log(length);
-    if (length === 6) {
+    const tag = inputEl.dataset.length;
+    const tagValue = Number(tag);
+
+
+    if (length === tagValue) {
         inputEl.classList.add('valid');
         inputEl.classList.remove('invalid');
-        //console.log('click');
-    } else if (length > 6 || length < 6) {
+
+    } else {
         inputEl.classList.add('invalid');
         inputEl.classList.remove('valid');
     }

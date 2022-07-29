@@ -6,7 +6,6 @@ function onFormSabm(event) {
     console.log(event);
     event.preventDefault();
 
-
     const formData = new FormData(event.currentTarget)
 
     formData.forEach((value, name) => {
@@ -17,6 +16,7 @@ function onFormSabm(event) {
             const message = "Перевірте заповнення всіх рядків!!";
             alert(message);
         }
+        event.currentTarget.reset()
 
     });
 };
